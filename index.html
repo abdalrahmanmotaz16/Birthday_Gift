@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>هدية ليكي 🎁</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Reem+Kufi:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--gold1:#ffe27a;--gold2:#f5b800;--gold3:#c98a00;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;font-family:'Cairo',Tahoma,sans-serif;overflow-x:hidden;background:#050a1f}
+.page{display:none;min-height:100vh;padding:40px 20px 70px;flex-direction:column;align-items:center;text-align:center;position:relative;overflow:hidden}
+.page.on{display:flex;animation:fade .7s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.wrap{width:100%;max-width:520px;display:flex;flex-direction:column;align-items:center;gap:22px;position:relative;z-index:2}
+h1,h2{font-family:'Reem Kufi','Cairo',sans-serif;margin:0;line-height:1.5}
+
+/* gold glossy buttons */
+.btn{position:relative;overflow:hidden;border:0;cursor:pointer;font:800 1.1rem 'Cairo',sans-serif;color:#3a2600;padding:14px 30px;border-radius:999px;
+background:linear-gradient(180deg,var(--gold1) 0%,var(--gold2) 48%,var(--gold3) 100%);
+box-shadow:0 6px 0 #8a5d00,0 12px 24px rgba(0,0,0,.35),inset 0 2px 0 rgba(255,255,255,.7);transition:transform .15s,box-shadow .15s}
+.btn::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);animation:shine 3.2s infinite}
+@keyframes shine{0%,60%{left:-60%}100%{left:130%}}
+.btn:active{transform:translateY(5px);box-shadow:0 1px 0 #8a5d00,0 4px 10px rgba(0,0,0,.35),inset 0 2px 0 rgba(255,255,255,.7)}
+.btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.hide{display:none!important}
+.pop{animation:pop .6s cubic-bezier(.2,1.6,.4,1)}
+@keyframes pop{from{transform:scale(.3);opacity:0}to{transform:scale(1);opacity:1}}
+.float{position:fixed;pointer-events:none;z-index:50;font-size:26px;animation:up 2s ease-out forwards}
+@keyframes up{to{transform:translate(var(--dx),-260px) rotate(var(--r)) scale(1.3);opacity:0}}
+
+/* PAGE 1 – dark glossy blue */
+#home{background:radial-gradient(ellipse at 50% -10%,#2b5bd7 0%,#0e2a7a 35%,#050f3a 70%,#020619 100%);color:#eaf1ff;justify-content:center}
+#home::before,#letter::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,0) 35%);pointer-events:none}
+#home h1{font-size:2.1rem;text-shadow:0 0 24px #5b8cff}
+.reply{padding:16px 26px;border-radius:20px;font-size:1.5rem;font-weight:800;color:#fff;background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.3);box-shadow:0 0 30px rgba(91,140,255,.55)}
+.card{padding:20px 22px;border-radius:22px;line-height:2;font-size:1.1rem;background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.25);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 10px 30px rgba(0,0,0,.35)}
+.star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;animation:tw 3s infinite}
+@keyframes tw{50%{opacity:.15}}
+
+/* PAGE 2 – light glossy purple, black accents */
+#gift{background:linear-gradient(160deg,#f3e8ff 0%,#d9bdfa 45%,#b98cf0 100%);color:#16091f;justify-content:flex-start;gap:0}
+#gift::before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.6) 0%,rgba(255,255,255,0) 40%);pointer-events:none}
+#gift h1{font-size:2rem;color:#000;padding-bottom:10px;border-bottom:3px solid #000}
+.cake{margin-top:30px;display:flex;flex-direction:column;align-items:center}
+.rows{display:flex;flex-direction:column;align-items:center;gap:6px;margin-bottom:-2px}
+.row{display:flex;gap:13px}
+.candle{width:9px;height:34px;border-radius:3px 3px 0 0;position:relative;background:repeating-linear-gradient(45deg,#fff 0 5px,#ff6fa5 5px 10px);box-shadow:0 0 0 1px #000}
+.flame{position:absolute;left:50%;bottom:100%;width:10px;height:18px;margin-left:-5px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(circle at 50% 70%,#fff6b0,#ffb300 60%,#ff6a00);box-shadow:0 0 12px 4px rgba(255,170,0,.7);transform-origin:50% 100%;animation:fl .35s infinite alternate;transition:opacity .5s,transform .5s}
+@keyframes fl{to{transform:scale(1.1,.9) rotate(4deg)}}
+.out .flame{opacity:0;transform:scale(0);animation:none}
+.smoke{position:absolute;left:50%;bottom:100%;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:#555;opacity:0}
+.out .smoke{animation:sm 1.6s ease-out forwards;animation-delay:var(--d)}
+@keyframes sm{0%{opacity:.7;transform:translateY(0)}100%{opacity:0;transform:translateY(-60px) scale(4)}}
+.t1,.t2,.t3{border:2px solid #000}
+.t1{width:190px;height:50px;border-radius:14px 14px 0 0;background:linear-gradient(180deg,#fff,#ffd3e6)}
+.t2{width:250px;height:60px;background:linear-gradient(180deg,#ff9ac6,#e5599a)}
+.t3{width:310px;height:70px;border-radius:0 0 12px 12px;background:linear-gradient(180deg,#a97cf0,#6d3fc7)}
+.plate{width:340px;max-width:100%;height:12px;border-radius:50%;background:#000;margin-top:-2px}
+#blow{margin-top:26px}
+#blowMsg{margin-top:16px;font-weight:800;font-size:1.2rem}
+.giftArea{margin-top:90px;display:flex;flex-direction:column;align-items:center;gap:22px;min-height:360px;width:100%;max-width:420px;position:relative;z-index:2}
+.box{position:relative;width:170px;height:150px;margin-top:40px}
+.body{position:absolute;bottom:0;width:100%;height:105px;border-radius:0 0 10px 10px;background:linear-gradient(90deg,#ff4d6d,#ff8fa3 50%,#ff4d6d);border:2px solid #000}
+.body::after,.lid::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:26px;margin-left:-13px;background:linear-gradient(90deg,#e6a700,#ffe27a,#e6a700)}
+.lid{position:absolute;top:0;left:-8px;right:-8px;height:48px;border-radius:8px;background:linear-gradient(90deg,#ff3a5e,#ff7f96 50%,#ff3a5e);border:2px solid #000;transform-origin:0 100%;transition:transform .8s cubic-bezier(.3,1.4,.5,1)}
+.lid::before{content:"🎀";position:absolute;top:-34px;left:50%;transform:translateX(-50%);font-size:40px;z-index:2}
+.opened .lid{transform:translate(-30px,-60px) rotate(-35deg)}
+.msg{width:100%;padding:22px 18px;border-radius:22px;background:linear-gradient(180deg,#fff,#f1e4ff);border:2px solid #000;box-shadow:6px 6px 0 #000;line-height:2;font-weight:600;font-size:1.05rem;animation:rise .9s cubic-bezier(.2,1.2,.4,1)}
+@keyframes rise{from{transform:translateY(80px) scale(.6);opacity:0}}
+.date{display:block;font-weight:800;font-size:1.3rem;margin:8px 0;direction:ltr;unicode-bidi:isolate}
+.hb{display:inline-block;margin-top:8px;padding:10px 22px;border:2px solid #000;background:#000;color:var(--gold1);border-radius:12px;font-size:1.25rem;font-weight:800}
+.teaser{display:flex;flex-direction:column;align-items:center;gap:22px;margin-top:60px}
+.teaser h2{font-size:2.2rem;color:#000}
+
+/* PAGE 3 – dark glossy crimson & burgundy */
+#letter{background:radial-gradient(ellipse at 50% -10%,#c1173a 0%,#7a0b25 35%,#3f0314 70%,#1d010a 100%);color:#ffe9ee;justify-content:flex-start}
+#letter .paper{width:100%;max-width:560px;padding:28px 22px;border-radius:24px;text-align:right;line-height:2.15;font-size:1.12rem;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.25);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 14px 40px rgba(0,0,0,.5)}
+.paper b{display:block;font-size:1.5rem;margin-bottom:10px;color:var(--gold1);font-family:'Reem Kufi','Cairo',sans-serif}
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;background:rgba(20,0,6,.7);padding:24px}
+.modal.on{display:flex}
+.modal div{padding:30px 28px;border-radius:24px;text-align:center;font-size:1.5rem;font-weight:800;color:#fff;background:linear-gradient(180deg,#d91f47,#7a0b25);border:2px solid var(--gold2);box-shadow:0 0 40px rgba(245,184,0,.5);animation:pop .5s cubic-bezier(.2,1.6,.4,1);display:flex;flex-direction:column;gap:20px;align-items:center}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<section class="page on" id="home">
+ <div class="wrap">
+  <h1>السلام عليكم ، اخبارك يا حبيبة 🙂</h1>
+  <button class="btn" id="alh">❤ الحمدلله </button>
+  <div class="reply hide" id="alhMsg">❤️‍🩹 دايما يارب🌹</div>
+  <div style="height:60px"></div>
+  <div class="card">ده ويبسيت عملته عشانك ، ک نوع من التسلية 🙂 واني بحب البرمجة يعني</div>
+  <button class="btn" data-go="gift">ادخلي على الهدية</button>
+ </div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page" id="gift">
+ <div class="wrap">
+  <h1>كل سنة وانتي طيبة ❤️‍🕊</h1>
+  <div class="cake" id="cake">
+   <div class="rows" id="rows"></div>
+   <div class="t1"></div><div class="t2"></div><div class="t3"></div><div class="plate"></div>
+  </div>
+  <button class="btn" id="blow">👀 اطفي الشموع🕯</button>
+  <div id="blowMsg"></div>
+
+  <div class="giftArea" id="giftArea">
+   <div class="box" id="box"><div class="body"></div><div class="lid"></div></div>
+   <button class="btn" id="openGift">𝕆𝕡𝕖𝕟 𝕄𝕖 🥳</button>
+   <div class="msg hide" id="giftMsg">
+    دي هدية ليكي 🎁 يارب تعجبك ان شاء الله 🤍😶 ، انا عارف انها حاجة بسيطة ، بس حبيت اوريكي حاجة بسيطة عشان احاول اثبت اني قدّ كلامي 😁
+    <span class="date">✨ 22 / 12 / 2008 ✨</span>
+    <span class="hb">𝑯𝒂𝒑𝒑𝒚 𝑩𝒊𝒓𝒕𝒉𝒅𝒂𝒚 🎂</span>
+   </div>
+   <button class="btn hide" id="done">خلّصت الرسالة 🌝</button>
+  </div>
+
+  <div class="teaser hide" id="teaser">
+   <h2>رسالة ليكي 💌</h2>
+   <button class="btn" data-go="letter">افتح الرسالة 📍</button>
+  </div>
+ </div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page" id="letter">
+ <div class="wrap">
+  <div class="paper">
+   <b>السلام عليكم</b>
+   اخبارك يا حبيبة ، ان شاء الله تكوني بخير يعني 🙂❤ ، معلش اني مسألتش عليكي الفترة دي كلها ، مجاش على بالي ابدًا اني مسألش  عليكي ، ولكني حبيت التزم بكلمتي معاكي وباتفاقنا مع بعض يعني 🕊✨ ، مش عارف لو كان يهمك اني عملت الهدية دي عشانك ، خصوصا كان صعب عليا اعيد نفس المجهود اللي عملته قبل كدة ، بس صدقيني حسيت انك تستاهلي يعني ❤ ، لازلت اتمنالك كل خير ، واتنمى تفضلي كويسة ، لو حابة تقولي اي حاجة ابعتيلي وانا هرد عليكي ف اقرب وقت ان شاء الله ، ربنا يوفقك (بصراحة لازلت بحبك) ، ياريت تشوفي ان دي وسيلة اثبتلك بيها حسن نيتي وتصدقي او لا ، عادي انا موافق على كل حاجة ، وراضي باللي عايزاه ، شكرا على ثقتك وعلى التزامك بعهدنا الفترة دي كلها ، مع السلامة 🕊❤
+  </div>
+  <button class="btn" id="read">قرأت الرسالة ✅</button>
+ </div>
+</section>
+
+<div class="modal" id="modal"><div>مستني رد فعلك عليها 😉<button class="btn" id="close">حاضر 🤍</button></div></div>
+
+<script>
+const $=s=>document.querySelector(s);
+function burst(el,chars,n){const r=el.getBoundingClientRect();for(let i=0;i<n;i++){const s=document.createElement('span');s.className='float';s.textContent=chars[i%chars.length];
+s.style.left=(r.left+r.width*Math.random())+'px';s.style.top=(r.top+r.height/2)+'px';s.style.setProperty('--dx',(Math.random()*200-100)+'px');s.style.setProperty('--r',(Math.random()*120-60)+'deg');s.style.animationDelay=(Math.random()*.4)+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),2600)}}
+function go(p){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('on',x.id===p));window.scrollTo(0,0);try{history.replaceState(null,'','#'+p)}catch(e){}}
+document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>go(b.dataset.go));
+
+// stars on page 1
+for(let i=0;i<40;i++){const s=document.createElement('i');s.className='star';s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*3}s`;$('#home').appendChild(s)}
+
+// page 1 reply
+$('#alh').onclick=e=>{const m=$('#alhMsg');m.classList.remove('hide','pop');void m.offsetWidth;m.classList.add('pop');burst(e.currentTarget,['❤️','🌹','✨','💙'],14)};
+
+// candles: 18 in two rows of 9
+const rows=$('#rows');
+for(let r=0;r<2;r++){const row=document.createElement('div');row.className='row';for(let i=0;i<9;i++){const c=document.createElement('div');c.className='candle';c.innerHTML='<div class="flame"></div><div class="smoke" style="--d:'+(Math.random()*.5)+'s"></div>';row.appendChild(c)}rows.appendChild(row)}
+let blown=false;
+$('#blow').onclick=e=>{if(blown)return;blown=true;$('#cake').classList.add('out');e.currentTarget.disabled=true;e.currentTarget.style.opacity=.6;$('#blowMsg').textContent='🎉 كل سنة وانتي طيبة 🎉';burst($('#cake'),['🎉','✨','🎊','💜'],22)};
+
+// gift
+$('#openGift').onclick=()=>{$('#box').classList.add('opened');$('#openGift').classList.add('hide');$('#giftMsg').classList.remove('hide');$('#done').classList.remove('hide','pop');$('#done').classList.add('pop');burst($('#box'),['🎁','✨','🥳','💜'],20)};
+$('#done').onclick=()=>{$('#giftArea').classList.add('hide');$('#teaser').classList.remove('hide');$('#teaser').classList.add('pop');window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})};
+
+// page 3
+$('#read').onclick=()=>$('#modal').classList.add('on');
+$('#close').onclick=()=>$('#modal').classList.remove('on');
+
+const h=location.hash.slice(1);if(['home','gift','letter'].includes(h))go(h);
+addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(['home','gift','letter'].includes(h))go(h)});
+</script>
+</body>
+</html>
